@@ -1,0 +1,47 @@
+[
+    {
+        "_id": 783283621873621687,
+        "name": "Juan",
+        "last": "Henriquez",
+        "fullName": "Juan Henriquez",
+        "email": "juanhenriquezzavarse18@gmail.com",
+        "bio": "Estudiante de Ingenieria en Computación, bla bla bla.....",
+        "birthdate": "1996-09-04",
+        "country": "Venezuela",
+        "phone": 4120423397,
+        "status": "online",
+        "photo_url": "/images/users/12323123121312312/perfil.jpg",
+        "notifications": [
+            {
+                "_id": 756744431324566,
+                "publicationId": 43233212,
+                "name": "You have a new message",
+                "type": "message",
+                "date": "2016-06-25" 
+            },
+            {
+                "_id": 756744431324566,
+                "name": "You have a new message",
+                "type": "message",
+                "date": "2016-06-25" 
+            }
+        ],
+        "adreess": [
+            "Urb. Agumarina",
+            "Ciudad Alianza, 2da Entrada",
+            "Sector Aguasal"
+        ],
+        "friends": [
+            "65765555433323", 
+            "654322343234213"
+        ],
+        "groups": [
+            "65765555433323", 
+            "654322343234213"
+        ],
+        "pages": [
+            "65765555433323", 
+            "654322343234213"
+        ]
+    }
+]

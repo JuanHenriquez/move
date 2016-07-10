@@ -1,0 +1,29 @@
+{
+  "name": "move",
+  "version": "1.0.0",
+  "description": "Move is a new social network with super features",
+  "main": "server/index.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "method-override": "^2.3.6",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.0-beta3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanHenriquez/move.git"
+  },
+  "author": "Juan Henriquez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JuanHenriquez/move/issues"
+  },
+  "homepage": "https://github.com/JuanHenriquez/move#readme"
+}

@@ -1,0 +1,16 @@
+[
+    {
+        "_id": 21333981238120,
+        "author": 232131239834,
+        "name": "My album",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ab sequi vero, numquam explicabo deserunt? Sapiente dolore obcaecati doloribus commodi, doloremque iste tenetur, eaque aperiam iure labore quam numquam sequi?",
+        "date_creation": "2008-07-24",
+        "photos": [
+            31232132343432,
+            12321342343242,
+            21324235343432,
+            12312134234343
+        ]
+        
+    }
+]
