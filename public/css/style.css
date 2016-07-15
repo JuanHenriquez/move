@@ -1,0 +1,17 @@
+button:focus {
+    background-color: transparent;
+}
+
+#main-nav {
+    position: fixed;
+}
+
+#nav-user-img {
+    border-radius: 50%;
+    max-width: 80px;
+    max-height: 80px;
+}
+
+#nav-user-info-email {
+    font-size: 13px;
+}

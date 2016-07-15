@@ -1,0 +1,23 @@
+{
+  "name": "move",
+  "description": "Move is a new social network with super features",
+  "main": "server/index.js",
+  "authors": [
+    "Juan Henriquez"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/JuanHenriquez/move",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.0.9",
+    "Materialize": "materialize#^0.97.6",
+    "Parallax-ImageScroll": "^0.2.3"
+  }
+}
