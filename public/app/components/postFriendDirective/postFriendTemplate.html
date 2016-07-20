@@ -1,0 +1,46 @@
+<md-card flex>
+
+    <!-- Card Header(User, buttons) -->
+    <md-card-header>
+        <!-- User picture and name -->
+        <md-card-avatar>
+            <img ng-src="./img/{{ user.picture }}" alt="perfil" class="md-avatar-icon">
+        </md-card-avatar>
+        <md-card-header-text>
+            <span class="md-title"> {{ user.name }} </span>
+            <span class="md-subhead">{{ user.date }}</span>
+        </md-card-header-text>
+        <!-- Action Buttons -->
+        <md-button class="card-post-icon md-icon-button">
+            {{ user.numLikes }}
+            <md-icon class="material-icons">favorite</md-icon>
+        </md-button>
+        <md-button class="card-post-icon md-icon-button">
+            {{ user.numComments }}
+            <md-icon class="material-icons">comment</md-icon>
+        </md-button>
+    </md-card-header>
+
+
+    <!-- Card Content -->
+    <md-card-content>
+        <p> {{ user.comment }} </p>
+    </md-card-content>
+    <md-list>
+        <md-subheader class="md-no-sticky">{{ user.numComments }} Comments</md-subheader>
+
+        <!-- Iterate over each comment for one post -->
+        <md-list-item class="md-2-line" ng-repeat="comment in user.comments">
+            <!-- Picture of the comment author -->
+            <img ng-src="./img/{{ comment.authorPicture }}" alt="" class="md-avatar">
+            <div class="md-list-item-text">
+                <!-- Author Name -->
+                <h3> {{ comment.author }} </h3>
+
+                <!-- Author Comment -->
+                <p> {{ comment.text }} </p>
+            </div>
+        </md-list-item>
+
+    </md-list>
+</md-card>
