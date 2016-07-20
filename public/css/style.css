@@ -1,9 +1,25 @@
+a {
+  text-decoration: none;
+}
+
 button:focus {
     background-color: transparent;
 }
 
-#main-nav {
-    position: fixed;
+md-input-container .md-errors-spacer {
+    min-height: 0;
+}
+
+#nav-list-links a {
+    display: block;
+    width: 100%;
+    color: inherit;
+}
+
+#nav-user {
+    min-height: 200px;
+    height: auto;
+    max-height: inherit;
 }
 
 #nav-user-img {
@@ -14,4 +30,38 @@ button:focus {
 
 #nav-user-info-email {
     font-size: 13px;
+}
+
+.md-button.md-icon-button md-icon,
+button.md-button.md-fab md-icon {
+  display: inline-block;
+}
+
+.md-button.card-post-icon {
+    width: 55px;
+    height: 55px;
+}
+
+.ng-hide.ng-hide-animate{
+     display: none !important;
+}
+
+.nav-user-buttons {
+    min-width: 20px;
+    min-height: 30px;
+    line-height: 20px;
+    font-size: 10px;
+    margin: 0 2px;
+}
+
+.nav-user-buttons.lt {
+    background-color: #ec407a!important;
+}
+
+.nav-user-buttons.md {
+    background-color: #3f51b5!important;
+}
+
+.nav-user-buttons.rt {
+    background-color: #03a9f4!important;
 }
