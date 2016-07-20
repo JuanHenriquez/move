@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html ng-app="moveApp">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Move</title>
+
+        <!-- Material Design Icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+
+        <!-- Angular Material Css -->
+        <!-- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css"/> -->
+        <link rel="stylesheet" href="./libs/angular-material/angular-material.css">
+
+        <!-- Materialize Css -->
+        <!-- <link rel="stylesheet" href="./libs/Materialize/dist/css/materialize.min.css"/> -->
+
+        <!-- My Styles -->
+        <link rel="stylesheet" href="./css/style.css"/>
+    </head>
+    <body ng-cloak ng-controller="AppController" layout="row">
+
+        <!-- Left Sidenav -->
+        <md-sidenav class="md-side md-whiteframe-z2" layout="column" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" flex-gt-sm="23" flex-xs="60">
+            <md-toolbar id="nav-user" class="md-tall md-hue-1 inset" layout="column" layout-padding layout-align="center center">
+
+                <!-- User Picture -->
+                <img id="nav-user-img" src="./img/perfil.png" alt="User picture" flex />
+
+                <!-- User information -->
+                <div id="nav-user-info" layout="column" layout-align="center center" flex>
+                    <span id="nav-user-info-title" class="md-title"> {{ user.username }} </span>
+                    <span id="nav-user-info-email" class="md-subhead"> {{ user.userEmail }} </span>
+
+                    <!-- Special Buttons  -->
+                    <div layout="row" flex>
+                        <md-button class="lt md-subhead nav-user-buttons md-raised md-accent">
+                            Friends {{ user.numFriends }}
+                        </md-button>
+                        <md-button class="md md-subhead nav-user-buttons md-raised md-accent">
+                            Posts {{ user.numPosts }}
+                        </md-button>
+                        <md-button class="rt md-subhead nav-user-buttons md-raised md-accent">
+                            Notifications {{ user.numNotifications }}
+                        </md-button>
+                    </div>
+                </div>
+
+            </md-toolbar>
+
+            <!-- Nav Items Links -->
+            <md-list id="nav-list-links">
+                <md-list-item>
+                    <a href="#">
+                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                            <div class="inset">
+                                <md-icon class="material-icons"> view_agenda </md-icon>
+                            </div>
+                            <div class="inset">
+                                <span>Feed</span>
+                            </div>
+                        </md-item-content>
+                    </a>
+                </md-list-item>
+                <md-list-item>
+                    <a ui-sref="friends">
+                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                            <div class="inset">
+                                <md-icon class="material-icons"> people </md-icon>
+                            </div>
+                            <div class="inset">
+                                <span>Friends</span>
+                            </div>
+                        </md-item-content>
+                    </a>
+                </md-list-item>
+                <md-list-item>
+                    <a href="#">
+                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                            <div class="inset">
+                                <md-icon class="material-icons"> dashboard </md-icon>
+                            </div>
+                            <div class="inset">
+                                <span>Dashboard</span>
+                            </div>
+                        </md-item-content>
+                    </a>
+                </md-list-item>
+                <md-list-item>
+                    <a href="#">
+                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                            <div class="inset">
+                                <md-icon class="material-icons"> account_circle </md-icon>
+                            </div>
+                            <div class="inset">
+                                <span>My Account</span>
+                            </div>
+                        </md-item-content>
+                    </a>
+                </md-list-item>
+                <md-list-item>
+                    <a href="#">
+                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                            <div class="inset">
+                                <md-icon class="material-icons"> pages </md-icon>
+                            </div>
+                            <div class="inset">
+                                <span>My Pages</span>
+                            </div>
+                        </md-item-content>
+                    </a>
+                </md-list-item>
+                <md-divider></md-divider>
+
+                <md-subheader>Management</md-subhead>
+
+                <md-list-item>
+                    <a href="#">
+                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                            <div class="inset">
+                                <md-icon class="material-icons"> settings </md-icon>
+                            </div>
+                            <div class="inset">
+                                <span>Configuration</span>
+                            </div>
+                        </md-item-content>
+                    </a>
+                </md-list-item>
+                <md-list-item>
+                    <a href="#">
+                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                            <div class="inset">
+                                <md-icon class="material-icons"> exit_to_app </md-icon>
+                            </div>
+                            <div class="inset">
+                                <span>Log Out</span>
+                            </div>
+                        </md-item-content>
+                    </a>
+                </md-list-item>
+                <md-list-item>
+                    <a href="#">
+                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                            <div class="inset">
+                                <md-icon class="material-icons"> book </md-icon>
+                            </div>
+                            <div class="inset">
+                                <span>Documentation</span>
+                            </div>
+                        </md-item-content>
+                    </a>
+                </md-list-item>
+
+            </md-list>
+        </md-sidenav>
+
+        <!-- Main Area -->
+        <md-content flex>
+            <div layout="column" layout-fill>
+
+                <!-- Main area nav  -->
+                <md-toolbar ng-show="!showSearch">
+                    <div class="md-toolbar-tools">
+
+                        <!-- Icon Menu -->
+                        <md-button hide-gt-md class="md-icon-button" ng-click="toggleSidenav('left')" aria-label="Menu">
+                            <md-icon class="material-icons"> menu </md-icon>
+                        </md-button>
+
+                        <h3> Feed </h3>
+                        <span flex></span>
+
+                        <!-- Search Icon -->
+                        <md-button class="md-icon-button" ng-click="showSearch = !showSearch">
+                            <md-icon class="material-icons"> search </md-icon>
+                        </md-button>
+
+                        <!-- Settings Icon -->
+                        <md-button class="md-icon-button">
+                            <md-icon class="material-icons"> more_vert </md-icon>
+                        </md-button>
+                    </div>
+                </md-toolbar>
+
+                <!-- Search Toolbar -->
+                <md-toolbar id="toolbar-search" class="md-hue-3" ng-show="showSearch">
+                    <div class="md-toolbar-tools">
+
+                        <!-- Icon Menu -->
+                        <md-button class="md-icon-button" aria-label="Menu" ng-click="showSearch = !showSearch">
+                            <md-icon class="material-icons"> arrow_back </md-icon>
+                        </md-button>
+
+                        <h3 flex="10">Back</h3>
+
+                        <md-input-container flex id="toolbar-input-search md-primary">
+                            <label>&nbsp;</label>
+                            <input ng-model="search.who" placeholder="Enter Search">
+                        </md-input-container>
+
+                        <!-- Search Icon -->
+                        <md-button class="md-icon-button" ng-click="showSearch = !showSearch">
+                            <md-icon class="material-icons"> search </md-icon>
+                        </md-button>
+
+                        <!-- Settings Icon -->
+                        <md-button class="md-icon-button">
+                            <md-icon class="material-icons"> more_vert </md-icon>
+                        </md-button>
+
+                    </div>
+                </md-toolbar>
+
+                <div ui-view></div>
+
+            </div>
+        </md-content>
+
+
+        <!-- JavaScripts Files -->
+        <script src="./js/vendor.bundle.js" charset="utf-8"></script>
+        <script src="./libs/jquery/dist/jquery.min.js" charset="utf-8"></script>
+        <script src="./libs/Materialize/dist/js/materialize.min.js" charset="utf-8"></script>
+        <script src="./js/app.bundle.js" charset="utf-8"></script>
+
+    </body>
+</html>
