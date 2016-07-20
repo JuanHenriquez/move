@@ -16,7 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-material": "^1.0.9",
+    "angular-material": "master",
     "Materialize": "materialize#^0.97.6",
     "Parallax-ImageScroll": "^0.2.3"
   }
