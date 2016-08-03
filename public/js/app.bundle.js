@@ -42,14 +42,15 @@ webpackJsonp([0],[
 
 	        .state('friends', {
 	            url: '/friends',
-	            templateUrl: './app/views/friends.html'
+	            templateUrl: './app/views/friends.html',
+	            controller: 'FriendsController'
 	        })
 	}
 
-	// Services.
-	__webpack_require__(10);
+
+	//require('./services');
 	// Controllers.
-	__webpack_require__(11);
+	__webpack_require__(10);
 	// Components or Directives.
 	__webpack_require__(13);
 
@@ -65,12 +66,6 @@ webpackJsonp([0],[
 /* 8 */,
 /* 9 */,
 /* 10 */
-/***/ function(module, exports) {
-
-	
-
-/***/ },
-/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -79,14 +74,14 @@ webpackJsonp([0],[
 	    var angular = __webpack_require__(1);
 
 	    // Angular app controllers.
-	    angular.module('moveApp').controller('AppController', __webpack_require__(12)());
-	    angular.module('moveApp').controller('PostsController', __webpack_require__(15)());
-
+	    angular.module('moveApp').controller('AppController', __webpack_require__(11)());
+	    angular.module('moveApp').controller('PostsController', __webpack_require__(12)());
+	    angular.module('moveApp').controller('FriendsController', __webpack_require__(16)());
 	}());
 
 
 /***/ },
-/* 12 */
+/* 11 */
 /***/ function(module, exports) {
 
 	module.exports = function() {
@@ -115,44 +110,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	(function () {
-
-	    var angular = __webpack_require__(1);
-
-	    // Angular app directives.
-	    angular.module('moveApp').directive('postCard', __webpack_require__(14)());
-
-	}());
-
-
-/***/ },
-/* 14 */
-/***/ function(module, exports) {
-
-	module.exports = function () {
-
-	    var directive = function () {
-	        return {
-	            restrict: 'E',
-	            templateUrl: 'app/components/postFriendDirective/postFriendTemplate.html',
-	            scope: {
-	                user: '='
-	            },
-	            replace: true
-	        };
-	    }
-
-	    return directive;
-
-	};
-
-
-/***/ },
-/* 15 */
+/* 12 */
 /***/ function(module, exports) {
 
 	module.exports = function () {
@@ -217,6 +175,114 @@ webpackJsonp([0],[
 	    PostController.$inject = ['$scope', '$http'];
 
 	    return PostController;
+
+	};
+
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	(function () {
+
+	    var angular = __webpack_require__(1);
+
+	    // Angular app directives.
+	    angular.module('moveApp').directive('friendPost', __webpack_require__(15)());
+	    angular.module('moveApp').directive('friendCard', __webpack_require__(17)());
+	}());
+
+
+/***/ },
+/* 14 */,
+/* 15 */
+/***/ function(module, exports) {
+
+	module.exports = function () {
+
+	    var directive = function () {
+	        return {
+	            restrict: 'E',
+	            templateUrl: 'app/components/friend-post/friend-post.html',
+	            scope: {
+	                user: '='
+	            },
+	            replace: true
+	        };
+	    }
+
+	    return directive;
+
+	};
+
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+	module.exports = function () {
+
+	    var FriendsController = function($scope, $http) {
+
+	        $scope.friends = [
+	            {
+	                name:"Juan Henriquez",
+	                picture: 'perfil.png',
+	                status: true,
+	                mutualFriends: 267,
+	                posts: 68
+	            },
+	            {
+	                name: "Samuel Alvarez",
+	                picture: 'perfil.png',
+	                status: true,
+	                mutualFriends: 1567,
+	                posts: 10
+	            },
+	            {
+	                name: "Michel Moreno",
+	                picture: 'perfil.png',
+	                status: false,
+	                mutualFriends: 1,
+	                posts: 0,
+	                favorite: true
+	            },
+	            {
+	                name: "Manuel Perez",
+	                picture: 'perfil.png',
+	                status: 'false',
+	                mutualFriends: 2134,
+	                posts: 1203
+	            }
+	        ];
+	    };
+
+	    FriendsController.$inject = ['$scope', '$http'];
+
+	    return FriendsController;
+
+	}
+
+
+/***/ },
+/* 17 */
+/***/ function(module, exports) {
+
+	module.exports = function () {
+
+	    var directive = function () {
+	        return {
+	            restrict: 'E',
+	            templateUrl: 'app/components/friend-card/friend-card.html',
+	            scope: {
+	                friend: '='
+	            },
+	            replace: true
+	        };
+	    }
+
+	    return directive;
 
 	};
 

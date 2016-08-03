@@ -3,7 +3,7 @@ module.exports = function () {
     var directive = function () {
         return {
             restrict: 'E',
-            templateUrl: 'app/components/postFriendDirective/postFriendTemplate.html',
+            templateUrl: 'app/components/friend-post/friend-post.html',
             scope: {
                 user: '='
             },

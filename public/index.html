@@ -5,15 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Move</title>
 
-        <!-- Material Design Icons -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-
         <!-- Angular Material Css -->
-        <!-- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css"/> -->
         <link rel="stylesheet" href="./libs/angular-material/angular-material.css">
 
         <!-- Materialize Css -->
-        <!-- <link rel="stylesheet" href="./libs/Materialize/dist/css/materialize.min.css"/> -->
+        <link rel="stylesheet" href="./libs/Materialize/dist/css/materialize.min.css"/>
 
         <!-- My Styles -->
         <link rel="stylesheet" href="./css/style.css"/>
@@ -51,7 +47,7 @@
             <!-- Nav Items Links -->
             <md-list id="nav-list-links">
                 <md-list-item>
-                    <a href="#">
+                    <a ui-sref="home">
                         <md-item-content md-ink-ripple layout="row" layout-align="start center">
                             <div class="inset">
                                 <md-icon class="material-icons"> view_agenda </md-icon>
@@ -187,7 +183,7 @@
                     <div class="md-toolbar-tools">
 
                         <!-- Icon Menu -->
-                        <md-button class="md-icon-button" aria-label="Menu" ng-click="showSearch = !showSearch">
+                        <md-button class="md-icon-button" aria-label="Menu" ng-click="showSearch = !showSearch; usernameFilter = ''">
                             <md-icon class="material-icons"> arrow_back </md-icon>
                         </md-button>
 
@@ -195,7 +191,7 @@
 
                         <md-input-container flex id="toolbar-input-search md-primary">
                             <label>&nbsp;</label>
-                            <input ng-model="search.who" placeholder="Enter Search">
+                            <input ng-model="searchFilter" placeholder="Enter Search">
                         </md-input-container>
 
                         <!-- Search Icon -->

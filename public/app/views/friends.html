@@ -1,0 +1,20 @@
+<div layout="column" layout-padding>
+    <div flex>
+        <h3 class="md-display-1">Favorite Friends</h3>
+        <div layout="row" layout-wrap layout-padding>
+            <div ng-repeat="friend in friends | filter: { name: searchFilter }" ng-if="friend.favorite">
+                <div  flex flex-xs="100" flex-sm="50">
+                    <friend-card friend="friend"></friend-card>
+                </div>
+            </div>
+        </div>
+    </div>
+    <md-divider flex> </md-divider>
+    <div flex>
+        <div layout="row" layout-wrap layout-padding>
+            <div ng-repeat="friend in friends | filter: { name: searchFilter }" flex flex-xs="100" flex-sm="50">
+                <friend-card friend="friend"></friend-card>
+            </div>
+        </div>
+    </div>
+</div>

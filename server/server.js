@@ -2,6 +2,7 @@
 
 const express = require('express');
 const app = express();
+const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
@@ -14,7 +15,7 @@ app.set('views', __dirname + '/../public');
 app.use(bodyParser.json());
 app.use(bodyParser.json( {type: 'application/vnd.api+json' } ));
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(morgan('dev'));
 app.use(methodOverride('X-HTTP-Method-Override'));
 
 app.use(express.static(__dirname + '/../public'));

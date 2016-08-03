@@ -38,12 +38,13 @@ function appConfig ($mdThemingProvider, $stateProvider, $urlRouterProvider) {
 
         .state('friends', {
             url: '/friends',
-            templateUrl: './app/views/friends.html'
+            templateUrl: './app/views/friends.html',
+            controller: 'FriendsController'
         })
 }
 
-// Services.
-require('./services');
+
+//require('./services');
 // Controllers.
 require('./controllers');
 // Components or Directives.
